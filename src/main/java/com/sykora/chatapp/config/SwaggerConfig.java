@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .title("Chat API")
                 .version("1.0")
                 .description("API for Chat-app")
-                .contact(new Contact("Bob","localhost", "bob.test@mail.com"))
+                .contact(new Contact("name","localhost", "name.test@mail.com"))
                 .license("Apache License Version 2.0")
                 .build();
     }

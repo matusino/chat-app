@@ -8,6 +8,17 @@ import org.springframework.web.servlet.config.annotation.*;
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
+    public void addCorsMappings(CorsRegistry corsRegistry) {
+        corsRegistry.addMapping("/**")
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
+                .maxAge(3600)
+                .allowedHeaders("*")
+                .exposedHeaders("Authorization","Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
+                .allowCredentials(true);
+    }
+
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");

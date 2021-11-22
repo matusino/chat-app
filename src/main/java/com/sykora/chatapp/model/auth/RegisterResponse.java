@@ -1,4 +1,4 @@
-package com.sykora.chatapp.model;
+package com.sykora.chatapp.model.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Message {
+public class RegisterResponse {
 
-    private String user;
-    private String message;
+    private String authToken;
+    private String username;
 
 }
