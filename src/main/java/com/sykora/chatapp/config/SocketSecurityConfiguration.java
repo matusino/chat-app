@@ -11,8 +11,8 @@ public class SocketSecurityConfiguration extends AbstractSecurityWebSocketMessag
     protected void configureInbound(MessageSecurityMetadataSourceRegistry messages) {
         messages
                 .nullDestMatcher().authenticated()
-                .simpMessageDestMatchers("/app/**").hasAnyRole("USER")
-                .simpSubscribeDestMatchers("/app/**").hasAnyRole("USER")
+                .simpMessageDestMatchers("/app/**").hasAnyRole("USER", "ADMIN")
+                .simpSubscribeDestMatchers("/app/**").hasAnyRole("USER", "ADMIN")
                 .anyMessage().authenticated();
     }
 
